@@ -15,7 +15,7 @@ begin
             "credential_name": "gemini_credential",
             "comments": "true",
             "object_list": [
-                {"owner": "ADMIN", "name": "REAL_ESTATE_LISTINGS_V13"}
+                {"owner": "username", "name": "Table_Name"} # this is to share Metadata of your table to AI
             ]
         }'
     );
