@@ -1,4 +1,6 @@
-# This is for OCI ATP, Since we are using here Gemini API, "run-sql" action is not available, So we will be writing the code to manually fetch the SQL, Format it and execute it in Database.
+Search in you database using AI profiles
+
+Note: This is for OCI ATP, Since we are using here Gemini API, "run-sql" action is not available, So we will be writing the code to manually fetch the SQL, Format it and execute it in Database.
 
 1. Make Sure Policy and ACL is created, For step check out file : Prerequestities.md
 
