@@ -32,4 +32,4 @@ Check DB-AI-SQL_V1 and DB-AI-SQL_V2 for the code.
 **Note**
 #To make AI more accurate, Use inputs like " Show me properties in location Like Brooklyn" , Here using "Like" will force AI to write the SQL using Like operation for more vast results.
 
-# Add comments on table columns before adding metadata to AI profile. In this case AI will know what kind of data columns store. Like "For columns price: add comment "This is final non-negotiable price for all listed properties".
+# Add comments on table columns before adding metadata to AI profile. In this case AI will know what kind of data columns store. Like "For columns price: add comment "This is final non-negotiable price for all listed properties". So when you write something like "Show me all properties in location like Gurgaon for non-negotiable price range 120000 and 6000000" AI will know for price which needs to be used, Same can be done for all other columns as well.
