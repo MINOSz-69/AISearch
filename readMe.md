@@ -1,6 +1,6 @@
-Search in you database using AI profiles
+**Search in you database using AI profiles**
 
-Note: This is for OCI ATP, Since we are using here Gemini API, "run-sql" action is not available, So we will be writing the code to manually fetch the SQL, Format it and execute it in Database.
+This is for OCI ATP, Since we are using here Gemini API, "run-sql" action is not available, So we will be writing the code to manually fetch the SQL, Format it and execute it in Database.
 
 1. Make Sure Policy and ACL is created, For step check out file : Prerequestities.md
 
@@ -14,7 +14,7 @@ https://aistudio.google.com/app/apikey  #API Key
 
 For more information on other options check : https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=3831&p210_wec=&session=106018010204687
 
-3. Test the AI profile : refer file : ProfileCreation.sql
+3. Test the AI profile - refer file : ProfileCreation.sql
 
 4. In our case "run-sql" is not working and According to Oracle's documentation, the supported actions for this function include:
 
@@ -27,3 +27,9 @@ The 'run_sql' action is not among the supported options.
 So we will be using custom code to fetch the SQL from API , format it and execute and display the results in Database.
 
 Check DB-AI-SQL_V1 and DB-AI-SQL_V2 for the code.
+
+
+**Note**
+#To make AI more accurate, Use inputs like " Show me properties in location Like Brooklyn" , Here using "Like" will force AI to write the SQL using Like operation for more vast results.
+
+# Add comments on table columns before adding metadata to AI profile. In this case AI will know what kind of data columns store. Like "For columns price: add comment "This is final non-negotiable price for all listed properties".
